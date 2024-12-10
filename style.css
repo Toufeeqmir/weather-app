@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 body{
-    background-image: url("./assets/weather.jpg");
+    background-image: url("weather.jpg");
     background-size: cover;
     font-family: "Roboto Condensed", sans-serif;
     /* background: linear-gradient(135deg , #1e3c72 , #2a5298, #005aa7); */
@@ -15,7 +15,7 @@ body{
 .container{
     background-color:rgba(229 , 227 , 227 , 0.9);
     border-radius: 10px;
-    background-image: url("./assets/back.jpeg");
+    background-image: url("back.jpeg");
     background-size: cover;
     box-shadow: 0 4px 6px black;
     padding: 30px;
