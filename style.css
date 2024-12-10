@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body{
+    background-image: url("./assets/weather.jpg");
+    background-size: cover;
+    font-family: "Roboto Condensed", sans-serif;
+    /* background: linear-gradient(135deg , #1e3c72 , #2a5298, #005aa7); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    perspective: 1000px;
+
+}
+.container{
+    background-color:rgba(229 , 227 , 227 , 0.9);
+    border-radius: 10px;
+    background-image: url("./assets/back.jpeg");
+    background-size: cover;
+    box-shadow: 0 4px 6px black;
+    padding: 30px;
+    text-align: center;
+    width: 300px;
+
+}
+.search-box{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+
+}
+.search-box input{
+    border: 2px solid #00838f;
+    border-radius: 5px 0 0 5px;
+    padding: 10px;
+    width: 70%;
+    background-color: #ffff;
+    color: #3333;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+}
+.search-box input:focus{
+    outline: none;
+    box-shadow:0 0 5px black ;
+}
+.search-box button{
+    background: #00838f;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 0  5px 5px 0;
+    transition: all 0.3s ease;
+}
+.search-box button:hover{
+    background-color: #005661;
+
+}
+#loader{
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    animation:spin 2s linear infinite;
+    margin: 20px auto;
+}
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+.weather-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    margin: 30px 0;
+    text-shadow: 2px 2px 4px black;
+
+}
+.weather-icon i{
+    margin: 0 10px; 
+     display: none;
+
+}
+#tempearture{
+    font-size: 24px;
+    margin: 20px 0;
+    color: #3333;
+    text-shadow: 1px 1px 2px black;
+    position: relative;
+
+}
+/* pseudo class */
+#tempearture::before{  
+    content: "\f2c9";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900; 
+    position: absolute;
+    left: 3rem;
+    top: 0;
+    font-size: 24px;
+    color: #ffcc00;
+     animation: flash 1s linear infinite ;
+     /* display: none; */
+
+}
+#description , #humidity , #wind{
+    margin: 10px 0;
+    color: #555;
+    text-shadow: 1px 1px 2px black;
+    font-size: 18px;
+    position: relative;
+}
+#humidity::before{  
+    content: "\f043";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900; 
+    position: absolute;
+    left: 6rem;
+    top: 0;
+    font-size: 24px;
+    color: #00aaff;
+     animation: flash 1s linear infinite ;
+     /* display: none; */
+
+}
+.wind{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.wind i{
+    margin-left: 10px;
+    /* display: none; */
+}
+.data-time{
+    margin-top: 20px;
+    /* display: none; */
+}
+.data-time p{
+    margin: 5px 0;
+    color: #555;
+    text-shadow: 1px 1px 2px rgba(0 , 0 , 0 , 0.114) ;
+    font-size: 18px;
+    position: relative;
+
+}
+.data-time i{
+    margin-right: 10px;
+    
+}
+.fa-solid.fa-sun{
+    color: #ffcc00;
+    animation: rotate 10s linear infinite;
+}
+.fa-solid.fa-moon{
+    color: #ffa500;
+    animation: rotate 10s linear infinite;
+}
+.fa-solid.fa-cloud{
+    color: #b0c4de;
+    animation: float 6s ease-in-out infinite;
+}
+.fa-solid.fa-cloud-rain{
+    color: #76c7c0;
+    animation: float 6s ease-in-out infinite, rain 3s linear infinite;
+}
+.fa-solid.fa-snowflake{
+    color: #00aaff;
+    animation: float 6s ease-in-out infinite, snowe  5s linear infinite;
+}
+.fa-solid.fa-bolt{
+    color: #ffcc00;
+    animation: flash 1s linear infinite;
+}
+.fa-solid.fa-wind{
+    color: #66ccff;
+    animation: blow 3s linear infinite;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+    
+}
+@keyframes float {
+    0%,
+    100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+}
+@keyframes flash {
+    0%,
+    50%,
+    100%{
+        opacity: 1;
+    }
+    25%, 
+    75%{
+        opacity: 0;
+    }
+}
+@keyframes blow {
+    0%,
+    100%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-10px);
+    }
+    
+}
+@keyframes rain {
+    0%
+   {
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(20px);
+    }
+    
+}
+@keyframes snowe {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(20px);
+    }
+    
+}
+.footer{
+    text-align: center;
+    margin-top: 20rem;
+    bottom: 0;
+    position: fixed;
+    color: #fff;
+
+}
+.footer:hover{
+    color: #db3864;
+    text-shadow: 1px 1px 2px rgba(0 , 0 , 0 , 0.243) ;
+    font-size: 1.5rem;
+    
+}
