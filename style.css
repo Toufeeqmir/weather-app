@@ -20,7 +20,7 @@ body{
     box-shadow: 0 4px 6px black;
     padding: 30px;
     text-align: center;
-    width: 400px;
+    width: 300px;
 
 }
 .search-box{
@@ -248,6 +248,7 @@ body{
     margin-top: 20rem;
     bottom: 0;
     position: fixed;
+    color : #fff;
 }
 .footer:hover{
     color: #db3864;
